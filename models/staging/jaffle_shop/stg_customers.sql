@@ -4,7 +4,7 @@ WITH customers AS (
         first_name,
         last_name
     FROM
-        `dbt-tutorial.jaffle_shop.customers`
+        {{ source("dbt-fundamentals-customers-orders", "customers") }}
 )
 
 SELECT * FROM customers
